@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744  # v3
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: actions/setup-go@be3c94b385c4f180051c996d336f57a34c397495  # v3
         with:
           go-version: ${{ matrix.go }}
           cache: true
@@ -30,7 +30,7 @@ jobs:
           git --no-pager diff && [[ 0 -eq $(git status --porcelain | wc -l) ]]
 
       - name: Go Lint
-        uses: golangci/golangci-lint-action@v3
+        uses: golangci/golangci-lint-action@3a919529898de77ec3da873e3063ca4b10e7f5cc  # v3
         with:
           version: ${{ matrix.golangci }}
           args: "--out-${NO_FUTURE}format colored-line-number"
